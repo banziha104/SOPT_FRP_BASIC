@@ -10,11 +10,11 @@ public class Subscriber1 {
         bind();
     }
 
-    void bind(){
+    void bind() {
         observable
                 .filter(s -> !s.startsWith("방송"))
-                .subscribe(s ->{
-            System.out.println("방송안보는 구독자1:" + s);
-        });
+                .subscribe(s -> { System.out.println("방송안보는 구독자1:" + s); },
+                        e -> e.printStackTrace(),
+                        () -> System.out.println("완료되었스비다"));
     }
 }

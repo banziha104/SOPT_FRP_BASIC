@@ -8,10 +8,12 @@ import io.reactivex.subjects.PublishSubject;
 public class MainClass {
     public static void main(String args[]){
         Scanner scanner = new Scanner(System.in);
-        PublishSubject<String> youtuber = PublishSubject.create();
+        PublishSubject<String> youtuber = PublishSubject.create(); // PublishSubject는
+
         new Subscriber1(youtuber);
         new Subscriber2(youtuber);
         new Subscriber3(youtuber);
+
         while(true){
             String s = scanner.next();
             youtuber.onNext(s);
