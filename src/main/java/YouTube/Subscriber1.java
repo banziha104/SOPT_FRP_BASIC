@@ -12,9 +12,9 @@ public class Subscriber1 {
 
     void bind() {
         observable
-                .filter(s -> !s.startsWith("방송"))
+                .filter(s -> !s.startsWith("방송")) // 방송이라고 시작되는 글자이면, subscribe 하지않음.
                 .subscribe(s -> { System.out.println("방송안보는 구독자1:" + s); },
                         e -> e.printStackTrace(),
-                        () -> System.out.println("완료되었스비다"));
+                        () -> System.out.println("완료되었습니다"));
     }
 }
